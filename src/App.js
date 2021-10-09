@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import React from "react";
+import TodoFirestore from "./components/todo-firestore";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+// import SimpleTodo from "./components/Simpletodo";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static" sx={{ backgroundColor: "#630330" }}>
+          <Toolbar>
+            <Typography
+              variant="h6"
+              textAlign="center"
+              component="div"
+              sx={{ flexGrow: 1 }}
+            >
+              <span style={{ cursor: "pointer" }}>Advanced Todo App</span>
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      <Box>
+        <TodoFirestore />
+        {/* <SimpleTodo /> */}
+      </Box>
+    </>
   );
 }
 
